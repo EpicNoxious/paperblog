@@ -1,0 +1,14 @@
+{
+  "name": "paperblog",
+  "version": "1.0.0",
+  "description": "Blog project made with django",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass static/sass/main.scss static/css/styles.css -w"
+  },
+  "author": "Jappreet Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}

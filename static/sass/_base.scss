@@ -1,0 +1,35 @@
+:root {
+  --background-color: 210, 198, 185;
+  --black: 29, 29, 27;
+  --brown: 128, 102, 87;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scroll-behavior: smooth;
+  position: relative;
+  min-height: 200vh;
+  margin: 0 1vw;
+  color: var(--black);
+  background-image: linear-gradient(
+      rgba(var(--background-color), 0.7),
+      rgba(var(--background-color), 0.7)
+    ),
+    url("../img/bckgrnd.jpg");
+  background-size: auto;
+
+  cursor: url("../img/cursor_angled.svg"), auto;
+
+  overflow-x: hidden;
+  user-select: none;
+}

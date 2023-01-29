@@ -1,0 +1,25 @@
+.footer {
+  font-size: 1.6vw;
+  font-weight: 1000;
+  font-family: "Meridies", serif;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__copyright {
+    cursor: url("../img/cursor.svg"), auto;
+  }
+  &__links {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 2vw;
+      li {
+        cursor: url("../img/cursor.svg"), auto;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
