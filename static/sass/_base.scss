@@ -18,8 +18,7 @@ body {
   }
   scroll-behavior: smooth;
   position: relative;
-  min-height: 200vh;
-  margin: 0 1vw;
+  padding: 0 1vw;
   color: var(--black);
   background-image: linear-gradient(
       rgba(var(--background-color), 0.7),
@@ -27,9 +26,10 @@ body {
     ),
     url("../img/bckgrnd.jpg");
   background-size: auto;
-
-  cursor: url("../img/cursor_angled.svg"), auto;
+  cursor: url("../img/c1.svg"), auto;
 
   overflow-x: hidden;
   user-select: none;
+
+  color: rgba(var(--black), 1);
 }

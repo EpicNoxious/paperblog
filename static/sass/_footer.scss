@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: space-between;
   &__copyright {
-    cursor: url("../img/cursor.svg"), auto;
+    cursor: url("../img/c2.svg"), auto;
   }
   &__links {
     ul {
@@ -15,7 +15,7 @@
       list-style: none;
       gap: 2vw;
       li {
-        cursor: url("../img/cursor.svg"), auto;
+        cursor: url("../img/c2.svg"), auto;
         &:hover {
           text-decoration: underline;
         }

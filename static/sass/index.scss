@@ -75,6 +75,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+
   .blog {
     outline: 2px solid rgba(var(--black), 1);
     border-radius: 0.8vw;
@@ -88,8 +89,7 @@
     -webkit-transform: translateX(calc(0));
     transform: translateX(calc(0));
     margin: 1px;
-
-    cursor: url("../img/cursor.svg"), auto;
+    cursor: url("../img/c2.svg"), auto;
 
     transition: transform 500ms ease-in-out;
     // animation
@@ -147,7 +147,7 @@
     border-top: 2px solid rgba(var(--black), 0.2);
     border-bottom: 2px solid rgba(var(--black), 0.2);
     margin-bottom: 2vw;
-    cursor: url("../img/cursor_angled.svg"), auto;
+    cursor: url("../img/c1.svg"), auto;
   }
   &__tags {
     display: flex;
@@ -155,7 +155,6 @@
 
     animation: scroll 8s linear infinite;
     width: calc((25vw) * 8);
-    cursor: url("../img/cursor_angled.svg"), auto;
   }
   &__tag {
     width: calc(25vw);
@@ -171,9 +170,9 @@
   font-size: 4vw;
   font-family: "Domine", serif;
   font-weight: 100;
-  margin: 0.4vw 0;
+  padding: 0.4vw 0;
   text-align: center;
-  cursor: url("../img/cursor_angled.svg"), auto;
+  cursor: url("../img/c1.svg"), auto;
 }
 .mailicon {
   font-size: 3.2vw;
@@ -183,5 +182,5 @@
   color: rgba(var(--background-color), 1);
   background-color: rgb(var(--black));
   font-weight: 100;
-  cursor: url("../img/cursor.svg"), auto;
+  cursor: url("../img/c2.svg"), auto;
 }

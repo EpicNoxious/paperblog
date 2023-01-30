@@ -1,0 +1,79 @@
+.container {
+  overflow: hidden;
+  height: 100vh;
+  padding: 2vw 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.page {
+  min-width: 100%;
+  height: 100%;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blogs-head {
+  min-width: 100%;
+  &ing {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2vw;
+    & > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 16vw;
+      line-height: 1.2;
+      background-color: rgb(var(--black));
+    }
+    &--1 {
+    }
+    &--2 {
+      gap: 3vw;
+    }
+  }
+  &-stamp {
+    height: calc(16vw + 3vw);
+    transform: rotate(3deg);
+  }
+}
+
+.blogs {
+  //   min-width: 100%;
+  display: flex;
+  &-blog {
+    border: 2px solid rgba(var(--black), 0.2);
+    width: 10vw;
+    height: 100%;
+    display: flex;
+    padding: 2vw 0;
+    align-items: center;
+    justify-content: space-between;
+    writing-mode: vertical-rl;
+    cursor: url("../img/c2.svg"), auto;
+    background-image: linear-gradient(
+        rgba(var(--background-color), 0.7),
+        rgba(var(--background-color), 0.7)
+      ),
+      url("../img/bckgrnd.jpg");
+    &:hover {
+      filter: contrast(1.2);
+    }
+    &:not(:last-child) {
+      border-right: 0px;
+    }
+  }
+}

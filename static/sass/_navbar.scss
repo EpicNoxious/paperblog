@@ -59,12 +59,17 @@ nav {
   .burger {
     width: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
     z-index: 13;
     // burger lines
+    .lines {
+      display: flex;
+
+      flex-direction: column;
+      gap: 5px;
+      cursor: url("../img/c2.svg"), auto;
+    }
     .line1,
     .line2 {
       width: 40px;
@@ -128,6 +133,7 @@ nav {
     color: rgb(var(--background-color));
     transition: transform 500ms ease-in-out 0ms;
     transform: translateY(15vh);
+    cursor: url("../img/c2.svg"), auto;
     &:hover {
       text-decoration: underline;
     }
