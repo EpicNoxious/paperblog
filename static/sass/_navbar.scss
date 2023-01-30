@@ -1,4 +1,5 @@
 nav {
+  // height: 5vw;
   width: 100%;
 
   padding: calc(2vh + 8px) calc(2vw + 8px);
@@ -144,13 +145,50 @@ nav {
   }
 }
 
-.circle {
-  width: 60px;
-  height: 100%;
-  border-radius: 40px;
-  background-color: red;
-  position: absolute;
+// change in navigation
+.nav-blogs {
+  position: fixed;
   top: 0;
-  right: 0;
-  z-index: 11 !important;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  writing-mode: vertical-rl;
+  height: 100%;
+  width: 5vw;
+  background-image: linear-gradient(
+      rgba(var(--background-color), 0.7),
+      rgba(var(--background-color), 0.7)
+    ),
+    url("../img/bckgrnd.jpg");
+  border-right: 2px solid rgba(var(--black), 0.2);
+  & .nav__head {
+    order: 2;
+    align-items: center;
+  }
+  & .burger {
+    order: 1;
+    justify-content: center;
+    .lines {
+      flex-direction: row;
+    }
+  }
+  & .place {
+    order: 3;
+    align-items: center;
+  }
+}
+
+.slider-blogs {
+  background-image: url("../img/Tornpage_Slant.svg");
+  transform: translateX(-100vw);
+  .menu {
+    height: 100%;
+    writing-mode: horizontal-tb;
+  }
+}
+
+.slider-blogs-focus {
+  transition: all 500ms ease-in-out 0ms;
+  transform: translateX(-0.1vw);
+  visibility: visible;
 }

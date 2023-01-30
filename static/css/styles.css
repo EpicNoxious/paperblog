@@ -179,15 +179,47 @@ nav .burger .line2-focus {
   transform: translateY(0vh);
 }
 
-.circle {
-  width: 60px;
-  height: 100%;
-  border-radius: 40px;
-  background-color: red;
-  position: absolute;
+.nav-blogs {
+  position: fixed;
   top: 0;
-  right: 0;
-  z-index: 11 !important;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  writing-mode: vertical-rl;
+  height: 100%;
+  width: 5vw;
+  background-image: linear-gradient(rgba(var(--background-color), 0.7), rgba(var(--background-color), 0.7)), url("../img/bckgrnd.jpg");
+  border-right: 2px solid rgba(var(--black), 0.2);
+}
+.nav-blogs .nav__head {
+  order: 2;
+  align-items: center;
+}
+.nav-blogs .burger {
+  order: 1;
+  justify-content: center;
+}
+.nav-blogs .burger .lines {
+  flex-direction: row;
+}
+.nav-blogs .place {
+  order: 3;
+  align-items: center;
+}
+
+.slider-blogs {
+  background-image: url("../img/Tornpage_Slant.svg");
+  transform: translateX(-100vw);
+}
+.slider-blogs .menu {
+  height: 100%;
+  writing-mode: horizontal-tb;
+}
+
+.slider-blogs-focus {
+  transition: all 500ms ease-in-out 0ms;
+  transform: translateX(-0.1vw);
+  visibility: visible;
 }
 
 .footer {
@@ -459,6 +491,7 @@ p::first-letter {
 
 .blogs-head {
   min-width: 100%;
+  padding-left: 5vw;
 }
 .blogs-heading {
   height: 100%;
