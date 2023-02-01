@@ -7,13 +7,20 @@ const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
 const menuitems = document.querySelectorAll(".menu-item");
 
-// change slider on particular url
+// change slider, navigation on particular url
 if (window.location.href.indexOf("blogs.html") > -1) {
   nav.classList.add("nav-blogs");
   slider.classList.add("slider-blogs");
+  nav.style.cssText = "display: display;";
+  document.documentElement.style.cssText = "padding: 0 1vw;";
+} else if (window.location.href.indexOf("blog.html") > -1) {
+  nav.style.cssText = "display: none;";
+  document.documentElement.style.cssText = "padding: 0";
 } else {
   nav.classList.remove("nav-blogs");
   slider.classList.remove("slider-blogs");
+  nav.style.cssText = "display: display;";
+  document.documentElement.style.cssText = "padding: 0 1vw;";
 }
 lines.addEventListener("click", (e) => {
   if (window.location.href.indexOf("blogs.html") > -1) {
