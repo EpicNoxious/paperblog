@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 # DATABASE_URL = os.environ.get('DATABASE_URL')
-DATABASES['default'] = dj_database_url.config(default='postgresql://postgres:Q3VJA6WfkkhvZUw8Wpnv@containers-us-west-18.railway.app:6395/railway')
+# DATABASES['default'] = dj_database_url.config(default='postgresql://postgres:Q3VJA6WfkkhvZUw8Wpnv@containers-us-west-18.railway.app:6395/railway')
 
 
 # Password validation
