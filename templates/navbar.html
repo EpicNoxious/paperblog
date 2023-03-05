@@ -1,34 +1,30 @@
-<!-- {% load static %}  -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <script defer src="../static/js/index.js"></script>
-  </head>
-  <nav>
-    <div class="nav__background"></div>
-    <!-- <div class="circle"></div> -->
-    <div class="place">new delhi, india</div>
-    <h4 class="nav__head">the paper blog</h4>
-    <div class="burger">
-      <div class="lines">
-        <div class="line1"></div>
-        <div class="line2"></div>
-      </div>
+<nav>
+  <div class="nav__background"></div>
+  <div class="place">new delhi, india</div>
+  <a class="nav__head" href="{% url 'index' %}"><h4>the paper blog</h4></a>
+  <div class="burger">
+    <div class="lines">
+      <div class="line1"></div>
+      <div class="line2"></div>
     </div>
-    <div class="slider">
-      <div class="menu">
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">index</a></h2>
-        </div>
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">blogs</a></h2>
-        </div>
+  </div>
+  <div class="slider">
+    <div class="menu">
+      <div class="overflow">
+        <a class="menu-item" href="{% url 'index' %}"><h2>index</h2></a>
       </div>
+      <div class="overflow">
+        <a class="menu-item" href="{% url 'blogs' %}"><h2>blogs</h2></a>
+      </div>
+      {% if user.is_authenticated %}
+      <div class="overflow">
+        <a class="menu-item" href="{% url 'logout' %}"><h2>logout</h2></a>
+      </div>
+      {% else %}
+      <div class="overflow">
+        <a class="menu-item" href="{% url 'login' %}"><h2>login</h2></a>
+      </div>
+      {% endif %}
     </div>
-  </nav>
-</html>
+  </div>
+</nav>

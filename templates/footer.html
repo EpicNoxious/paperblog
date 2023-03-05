@@ -1,25 +1,27 @@
-<!-- {% load static %}  -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <script defer src="../static/js/index.js"></script>
-  </head>
-  <footer>
-    <div class="footer">
-      <div class="footer__copyright">jappreet &copy;</div>
-      <div class="footer__links">
-        <ul>
-          <li>twitter</li>
-          <li>github</li>
-          <li>linkedin</li>
-          <li>instagram</li>
-        </ul>
-      </div>
+<footer>
+  <div class="footer">
+    <div class="footer__copyright">
+      <a href="{% url 'index' %}"> <h5>jappreet &copy;</h5> </a>
     </div>
-  </footer>
-</html>
+    <div class="footer__links">
+      <ul>
+        <li>
+          <a href="https://twitter.com/JappreetSingh9"> <h5>twitter</h5> </a>
+        </li>
+        <li>
+          <a href="https://github.com/epicnoxious"><h5>github</h5></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/jappreet-singh-6362071a0/"
+            ><h5>linkedin</h5></a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/jappreet.singh_/"
+            ><h5>instagram</h5></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

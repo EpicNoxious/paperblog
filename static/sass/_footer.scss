@@ -1,25 +1,59 @@
 .footer {
-  font-size: 1.6vw;
-  font-weight: 1000;
-  font-family: "Meridies", serif;
+  font-family: "Canopee", serif;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2vw;
-  padding-bottom: 2vw;
+  padding: 0 20px;
+  padding-bottom: 20px;
+  height: 3vh;
+  @include phone {
+    padding: 0 10px;
+    padding: 0 10px;
+  }
   &__copyright {
-    cursor: url("../img/c2.svg"), auto;
+    a {
+      color: rgba(var(--black), 1);
+      cursor: url("../img/c2.svg"), auto;
+      text-decoration: none;
+      &:hover {
+        color: rgba(var(--orange), 1);
+      }
+    }
+    @include phone {
+      display: none;
+    }
   }
   &__links {
+    @include phone {
+      margin-left: auto;
+    }
     ul {
       display: flex;
       list-style: none;
+      align-items: flex-end;
+      justify-content: center;
       gap: 2vw;
       li {
         cursor: url("../img/c2.svg"), auto;
-        &:hover {
-          text-decoration: underline;
+        position: relative;
+        a {
+          color: rgba(var(--black), 1);
+          cursor: url("../img/c2.svg"), auto;
+          text-decoration: none;
+          &:hover {
+            color: rgba(var(--orange), 1);
+          }
+        }
+        @include phone {
+        }
+        &:after {
+          content: "";
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border-bottom: 2px solid rgba(var(--black), 0.2);
         }
       }
     }

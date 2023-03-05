@@ -2,6 +2,7 @@
   --background-color: 210, 198, 185;
   --black: 29, 29, 27;
   --brown: 128, 102, 87;
+  --orange: 246, 123, 74;
 }
 
 * {
@@ -18,7 +19,6 @@ body {
   }
   scroll-behavior: smooth;
   position: relative;
-  // padding: 0 1vw;
   color: var(--black);
   background-image: linear-gradient(
       rgba(var(--background-color), 0.7),
@@ -32,4 +32,60 @@ body {
   user-select: none;
 
   color: rgba(var(--black), 1);
+}
+
+.no-display {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: var(--black);
+  background-image: linear-gradient(
+      rgba(var(--background-color), 0.7),
+      rgba(var(--background-color), 0.7)
+    ),
+    url("../img/bckgrnd.jpg");
+  background-size: auto;
+  cursor: url("../img/c1.svg"), auto;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  place-items: center;
+  text-align: center;
+  z-index: 20;
+  @include none {
+    display: grid;
+  }
+  @include phone {
+    display: none;
+  }
+}
+
+//
+// PRELOAD ANIMATION
+//
+
+html {
+  background-color: rgba(var(--black), 1);
+  background-image: none;
+}
+@keyframes swirl-paper {
+  0% {
+    scale: 0.6;
+    transform: translateY(20vh) rotate(1440deg);
+  }
+  60% {
+    scale: 0.6;
+    transform: translateY(-20vh) rotate(1440deg);
+  }
+
+  100% {
+    scale: 1;
+    transform: translateY(0vh) rotate(0deg);
+  }
+}
+.animation {
+  animation: swirl-paper 2.4s ease-in-out 300ms;
+}
+.post-animation {
+  animation: none !important;
 }

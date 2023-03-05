@@ -1,0 +1,37 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<section class="login">
+  <div class="login-background">
+    <div id="object"></div>
+    <div class="add-container login-container">
+      <div class="add-wrapper login-wrapper">
+        <div class="add-wrapper__heading login-wrapper__heading">
+          <h4 class="add-wrapper__heading--sub login-wrapper__heading--sub">
+            your account
+          </h4>
+          <h2 class="add-wrapper__heading--main login-wrapper__heading--main">
+            sign in
+          </h2>
+        </div>
+        <form method="POST" class="login-form">
+          {% csrf_token %} {% for field in form %}
+          <div class="login-form--field">{{field}}</div>
+          {% for error in field.errors %}
+          <span class="field--errors">{{error}}</span>
+          {% endfor %} {% endfor %}
+
+          <div class="login-form--action">
+            <a href="{% url 'reset_password' %}">Forget Password?</a>
+          </div>
+          <input class="login-form--btn" type="submit" value="sign in" />
+        </form>
+        <div class="login-form--switch">
+          Don't have an account? &nbsp;&nbsp;<a href="{% url 'register' %}"
+            >Sign Up</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

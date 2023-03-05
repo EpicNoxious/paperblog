@@ -1,0 +1,36 @@
+{% extends 'main.html' %} {% load static %}
+<!--  -->
+{% block title %} Delete Blog {% endblock %} {% block content %}
+
+<section class="signupin">
+  <div class="back-btn-div">
+    <a href="{% url 'blog' post.pk %}" class="action-btn blog-btn crud-btn">
+      <img src="{% static 'img/back_arrow.svg' %}" alt="back arrow" />
+      <h5>go back</h5>
+    </a>
+  </div>
+  <div class="signupin-container">
+    <div class="signupin__heading">
+      <h4 class="signupin__heading--sub">Delete your</h4>
+      <h2 class="signupin__heading--main">blog</h2>
+      <p class="signupin__heading--salute">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni qui quia
+        voluptatem blanptatibus omnis nemo sequi commodi id totam adipisci.
+      </p>
+    </div>
+    <!-- Sign Up Form -->
+    <div class="forms">
+      <!-- Sign In Form -->
+      <form method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <span class="form--delete">Are you sure you want to delete?</span>
+        <h5 class="form--delete-title">{{post.title}}</h5>
+        <span class="btn--wrapper">
+          <button class="action-btn" type="submit">Delete</button>
+        </span>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

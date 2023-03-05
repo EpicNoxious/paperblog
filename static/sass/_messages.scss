@@ -1,0 +1,68 @@
+.alert {
+  position: fixed;
+  right: 0%;
+  top: 90vh;
+  color: rgb(var(--background-color));
+  background-image: url("../img/message_bckgrnd.svg");
+  background-size: auto;
+  background-repeat: repeat-x;
+  background-size: cover;
+  padding: 1.2vw 1.6vw 1.2vw 4.8vw;
+  width: auto;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgb(var(--background-color));
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out 0.5s;
+  animation: slide-in 700ms ease-in-out 0.5s forwards;
+  cursor: url("../img/c1.svg"), auto;
+  @include phone {
+    padding: 2vw 2.4vw 2vw 9.6vw;
+  }
+}
+
+.alert,
+.alert > .alert__message {
+  font-family: "Editorial", serif;
+  font-size: 1.6vw;
+  font-weight: 100;
+  text-transform: capitalize;
+  @include phone {
+    font-size: 4vw;
+  }
+}
+
+.alert.alert--error,
+.alert.alert--error > .alert__message .alert__close {
+}
+
+.alert.alert--success,
+.alert.alert--success > .alert__message .alert__close {
+}
+
+.alert > .alert__close {
+  background: transparent;
+  border: none;
+  outline: transparent;
+  cursor: url("../img/c2.svg"), auto;
+  font-size: 2.4vw;
+  color: rgb(var(--background-color));
+  font-family: monospace;
+  @include phone {
+    font-size: 4.8vw;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 1;
+    translate: 100%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0%;
+  }
+}

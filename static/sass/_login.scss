@@ -1,0 +1,284 @@
+.signupin {
+  height: 97vh;
+  height: calc(var(--vh, 1vh) * 97);
+  @include phone {
+    height: auto;
+  }
+  padding: 20px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    @include phone {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  &__heading {
+    text-align: center;
+    line-height: 1;
+    text-align: left;
+    width: 50%;
+    @include phone {
+      width: 100%;
+    }
+    &--sub {
+      text-transform: capitalize;
+      font-weight: 1000;
+      font-size: 2.4vw;
+      @include phone {
+        font-size: 9.6vw;
+      }
+    }
+    &--main {
+      font-size: 11.2vw;
+      @include phone {
+        font-size: 40vw;
+        margin-bottom: 10px;
+      }
+    }
+    &--salute {
+      @include phone {
+        font-size: 9vw;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+// .......................
+// form
+// .......................
+.forms {
+  width: 50%;
+  height: 100%;
+  @include phone {
+    width: 100%;
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  font-family: "Editorial";
+  font-weight: 1000;
+  font-size: 1.4vw;
+  width: 100%;
+  @include phone {
+    font-size: 4.8vw;
+  }
+}
+input[type="file"] {
+  color: rgba(var(--black), 0.4);
+  &::file-selector-button {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+textarea {
+  resize: none;
+  width: 100%;
+  font-family: "Editorial";
+  font-weight: 1000;
+  font-size: 1.4vw;
+  @include phone {
+    font-size: 4.8vw;
+  }
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(var(--background-color)) inset;
+}
+
+::placeholder {
+  font-family: "Editorial";
+  font-weight: 1000;
+  font-size: 1.4vw;
+  color: rgba(var(--black), 0.4);
+  @include phone {
+    font-size: 4.8vw;
+  }
+}
+.form {
+  &--btn {
+    background-color: rgba(var(--black), 1);
+    color: rgba(var(--background-color), 1);
+    font-family: "Canopee";
+    padding: 10px 20px;
+    font-size: 2.4vw;
+    font-weight: 1000;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+  &--label {
+    color: rgba(var(--black), 0.7);
+    font-family: "Editorial";
+    font-weight: 1000;
+    font-size: 1vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0 0 12px;
+    @include phone {
+      font-size: 4.8vw;
+    }
+  }
+  &--field {
+    &-embed {
+      border: 1px solid rgba(var(--black), 0.2);
+      height: 100%;
+      padding: 40px 10px 10px;
+      line-height: 1;
+    }
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    width: 75%;
+    background-color: rgba(var(--background-color), 1);
+    outline: 1px solid rgba(var(--black), 1);
+    padding: 4px;
+    // box-shadow: -4px 4px 6px 0 rgb(29 29 27 / 20%);
+    @include phone {
+      width: 100%;
+    }
+    &-input {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &--switch {
+    font-family: "Editorial", serif;
+    font-size: 1.2vw;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    @include phone {
+      font-size: 4.8vw;
+    }
+    a {
+      color: rgba(var(--black), 1);
+      font-weight: 1000;
+      cursor: url("../img/c2.svg"), auto;
+      text-decoration: none;
+      &:hover {
+        color: rgba(var(--orange), 1);
+      }
+    }
+  }
+  &--forget {
+    margin-left: auto;
+    margin-right: 12.5%;
+    @include phone {
+      margin-right: 0%;
+    }
+    a {
+      color: rgba(var(--black), 1);
+      font-weight: 1000;
+      cursor: url("../img/c2.svg"), auto;
+      font-family: "Editorial";
+      font-size: 1vw;
+      text-decoration: none;
+      @include phone {
+        font-size: 4.8vw;
+      }
+      &:hover {
+        color: rgba(var(--orange), 1);
+      }
+    }
+  }
+  &--delete {
+    font-family: "Editorial";
+    font-weight: 1000;
+    font-size: 1.4vw;
+    text-align: left;
+    width: 100%;
+    margin-left: 25%;
+    @include phone {
+      font-size: 4.8vw;
+      margin-left: 0%;
+      text-align: center;
+    }
+    &-title {
+      width: 100%;
+      line-height: 1;
+      margin-left: 25%;
+      font-size: 3.2vw;
+      @include phone {
+        margin-left: 0%;
+        font-size: 16vw !important;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.action-btn {
+  background-color: rgba(var(--black), 1);
+  color: rgba(var(--background-color), 1);
+  font-family: "Canopee", serif;
+  font-size: 2.2vw;
+  font-weight: 1000;
+  height: calc(var(--vh, 1vh) * 7);
+  @include tab {
+    height: calc(var(--vh, 1vh) * 6) !important;
+  }
+  padding: 0 2.4vw;
+  // margin-left: calc(12.5%);
+  outline: 0;
+  border: 0;
+  cursor: url("../img/c2.svg"), auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+  transform: translate(7px, 7px);
+  &:hover {
+    transform: translate(0px, 0px);
+  }
+  @include phone {
+    font-size: 5.6vw;
+    padding: 0 3.2vw;
+    transform: translate(5px, 5px);
+  }
+}
+.blog-btn {
+  transform: translate(0px, 0px);
+  text-decoration: none;
+
+  h5 {
+    font-size: 2.2vw;
+    margin: auto 0;
+  }
+}
+.crud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--background-color), 1);
+  color: rgba(var(--black), 1);
+  border: 2px solid rgba(var(--black), 1);
+  gap: 10px;
+  @include tab {
+    height: calc(var(--vh, 1vh) * 6) !important;
+  }
+}
+.btn--wrapper {
+  border: 2px solid rgba(var(--black), 1);
+  margin-left: calc(12.5%);
+  align-self: flex-start;
+  @include phone {
+    margin-left: calc(0%);
+  }
+}

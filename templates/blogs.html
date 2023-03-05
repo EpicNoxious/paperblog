@@ -1,97 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <script defer src="../static/js/index.js"></script>
-    <title>Document</title>
-  </head>
-  <nav>
-    <div class="nav__background"></div>
-    <div class="place">new delhi, india</div>
-    <h4 class="nav__head">the paper blog</h4>
-    <div class="burger">
-      <div class="lines">
-        <div class="line1"></div>
-        <div class="line2"></div>
-      </div>
-    </div>
-    <div class="slider">
-      <div class="menu">
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">index</a></h2>
-        </div>
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">blogs</a></h2>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <body>
-    <div class="container">
-      <div class="wrapper">
-        <!-- <div class="page page_1">1</div>
-        <div class="page page_2">2</div>
-        <div class="page page_3">3</div> -->
-        <section class="blogs-head">
-          <div class="blogs-heading">
-            <div class="blogs-heading--1"><h1>recent</h1></div>
-            <div class="blogs-heading--2">
-              <h1>blogs</h1>
-              <img
-                class="blogs-head-stamp"
-                src="../static/img/Stamp.svg"
-                alt="Stamp of name"
-              />
-            </div>
-          </div>
-        </section>
-        <section class="blogs">
-          <div class="blogs-blog">
-            <h2>Blog 1</h2>
-            <span class="date">16/04/2002</span>
-          </div>
-          <div class="blogs-blog">
-            <h2>Blog 2</h2>
-            <span class="date">16/04/2002</span>
-          </div>
-          <div class="blogs-blog">
-            <h2>Blog 3</h2>
-            <span class="date">16/04/2002</span>
-          </div>
-          <div class="blogs-blog">
-            <h2>Blog 4</h2>
-            <span class="date">16/04/2002</span>
-          </div>
-          <div class="blogs-blog">
-            <h2>Blog 5</h2>
-            <span class="date">16/04/2002</span>
-          </div>
-        </section>
+{% extends 'main.html' %} {% load static %}
+<!--  -->
+{% block title %} Browse Blogs {% endblock %}
+{% block content %}
 
-        <section class="talk">
-          <div class="">
-            <h2>let<span>'s</span> talk!</h2>
-            <p>
-              are you looking for an eye catching design? Let's create something
-              great together!
-            </p>
-          </div>
-          <a href="mailto:jappreet16042002@gmail.com" class="talk-email">
-            email me
-          </a>
-        </section>
+<style>
+  @media only screen and (min-device-width: 991px) {
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: auto;
+      bottom: auto;
+      writing-mode: vertical-rl;
+      height: 100%;
+      width: 10vh;
+      background-image: linear-gradient(
+          rgba(var(--background-color), 0.7),
+          rgba(var(--background-color), 0.7)
+        ),
+        url("../img/bckgrnd.jpg");
+      border-right: 2px solid rgba(var(--black), 0.2);
+    }
+    nav .nav__head {
+      order: 2;
+      align-items: center;
+    }
+    nav .burger {
+      order: 1;
+      justify-content: center;
+    }
+    nav .burger .lines {
+      flex-direction: row;
+    }
+    nav .place {
+      order: 3;
+      align-items: center;
+    }
+  }
+  @media only screen and (min-device-width: 991px) {
+    .slider {
+      background-image: url("../static/img/Tornpage_Slant.png");
+      transform: translate(-100vw, 0vh);
+      background-position: right center !important;
+    }
+  }
+  @media only screen and (min-device-width: 991px) {
+    .slider-focus {
+      transition: all 500ms ease-in-out 0ms;
+      transform: translate(-0.1vw, 0);
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-device-width: 991px) {
+    .menu {
+      height: 100%;
+      writing-mode: horizontal-tb;
+    }
+  }
+</style>
+<div class="container" loading="lazy">
+  <div class="wrapper">
+    <section class="blogs-head">
+      <div class="blogs-heading">
+        <div class="blogs-heading--1"><h1>featured</h1></div>
+        <div class="blogs-heading--2">
+          <h1>blogs</h1>
+          <img
+            class="blogs-head-stamp"
+            src="../static/img/Stamp.svg"
+            alt="Stamp of name"
+          />
+        </div>
       </div>
-    </div>
-  </body>
-  <script>
-    const container = document.querySelector(".wrapper");
+    </section>
+    <section class="blogs">
+      {% for blogs in object_list %}
+      <a href="{% url 'blog' blogs.pk %}" class="blogs-blog">
+        <h2>{{ blogs.title }}</h2>
+        <span class="date">{{ blogs.date_of_create }}</span>
+      </a>
+      {% endfor %}
+      <a href="{% url 'add' %}" class="blogs-blog">
+        <h2>Add blog</h2>
+        <span class="date"
+          ><img src="{% static 'img/c3.svg' %}" alt="add icon" />
+        </span>
+      </a>
+    </section>
 
+    <section class="talk">
+      <div class="talk-wrapper">
+        <h2>let<span>'s</span> talk!</h2>
+        <p>
+          are you looking for an eye catching design? Let's create something
+          great together!
+        </p>
+      </div>
+      <a href="mailto:jappreet16042002@gmail.com" class="talk-email">
+        email me
+      </a>
+    </section>
+  </div>
+</div>
+
+<script>
+  const tabView = window.matchMedia("(min-width: 991px)");
+  const container = document.querySelector(".wrapper");
+
+  if (tabView.matches) {
     container.addEventListener("wheel", (e) => {
       e.preventDefault();
       container.scrollLeft += e.deltaY / 2;
     });
-  </script>
-</html>
+  }
+</script>
+
+{% endblock content %}

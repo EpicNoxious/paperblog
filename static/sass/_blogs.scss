@@ -2,6 +2,9 @@
   overflow: hidden;
   height: 100vh;
   padding: 4vh 0;
+  @include tab {
+    padding: 0vw 0;
+  }
 }
 
 .wrapper {
@@ -9,6 +12,9 @@
   height: 100%;
   display: flex;
   overflow-x: hidden;
+  @include tab {
+    flex-direction: column;
+  }
 }
 
 .page {
@@ -21,15 +27,30 @@
 }
 
 .blogs-head {
-  padding-left: 10vh;
+  padding-left: calc(10vh + 20px);
   margin-right: 20vh;
+  @include tab {
+    padding-left: calc(0);
+    // padding-top: calc(10vh + 20px);
+    margin: calc(10vh + 20px) 20px 20px 20px;
+    // margin-right: 0vw;
+  }
+  @include phone {
+    padding-left: calc(0);
+    // padding-top: calc(10vh + 20px);
+    margin: calc(8vh + 10px) 10px 10px 10px;
+    // margin-right: 0vw;
+  }
   &ing {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 2vw;
+    gap: 20px;
+    @include phone {
+      gap: 10px;
+    }
     & > * {
       display: flex;
       align-items: center;
@@ -37,44 +58,141 @@
     }
     h1 {
       font-size: 32vh;
-      line-height: 1.2;
+      line-height: 1.1;
+      padding-right: 40px;
       background-color: rgb(var(--black));
+      letter-spacing: -1vh;
+      line-height: 30vh;
+      @include tab {
+        padding-right: 40px;
+        font-size: 28vw;
+        line-height: 20vw;
+      }
+      @include phone {
+        padding: 3vw 3vw 1vw 1vw;
+        font-size: 32vw;
+        line-height: 27vw;
+      }
     }
     &--1 {
+      @include tab {
+        width: 100%;
+        background-color: rgb(var(--black));
+      }
     }
     &--2 {
-      gap: 4vh;
+      gap: 20px;
+      @include tab {
+        width: 100%;
+        gap: 0px;
+        justify-content: space-between;
+      }
     }
   }
   &-stamp {
     height: calc(32vh + 6vh);
     transform: rotate(3deg);
+    @include tab {
+      transform: rotate(0deg);
+      height: calc(20vw + 3vw);
+    }
+    @include phone {
+      margin-left: auto;
+      height: calc(32vw);
+      display: inline-block;
+      background-attachment: scroll !important;
+    }
   }
 }
 
 .blogs {
   //   min-width: 100%;
   display: flex;
+  margin: 0 20px;
+  @include tab {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  @include tab {
+    flex-direction: column;
+    margin: 10px 10px;
+  }
   &-blog {
     border: 2px solid rgba(var(--black), 0.2);
     width: 20vh;
     height: 100%;
     display: flex;
-    padding: 4vh 0;
+    padding: 40px 0;
     align-items: center;
     justify-content: space-between;
     writing-mode: vertical-rl;
+    text-decoration: none;
+    gap: 20px;
+    @include phone {
+      &:last-child {
+        display: flex;
+      }
+    }
+
+    color: rgb(var(--black));
     cursor: url("../img/c2.svg"), auto;
     background-image: linear-gradient(
         rgba(var(--background-color), 0.7),
         rgba(var(--background-color), 0.7)
       ),
       url("../img/bckgrnd.jpg");
+
+    @include tab {
+      writing-mode: horizontal-tb;
+      width: 100%;
+      height: auto;
+      padding: 40px 20px;
+    }
+    @include phone {
+      gap: 10px;
+      padding: 0px;
+      padding-bottom: 20px;
+      border: 0;
+      vertical-align: middle;
+      height: 100%;
+      display: inline-block;
+      max-width: none;
+      width: auto;
+      background-attachment: scroll !important;
+    }
+    h2 {
+      font-size: 8.8vh !important;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 80%;
+      @include phone {
+        font-size: 8vw !important;
+      }
+    }
     &:hover {
       filter: contrast(1.2);
     }
     &:not(:last-child) {
       border-right: 0px;
+      @include tab {
+        border-right: 2px solid rgba(var(--black), 0.2);
+        border-bottom: 0px;
+      }
+      @include phone {
+        border-right: 0px solid rgba(var(--black), 0.2);
+      }
+    }
+    .date {
+      text-align: right;
+      flex: 20%;
+      @include phone {
+        font-size: 3.2vw !important;
+        img {
+          width: 7.2vw;
+          height: auto;
+        }
+      }
     }
   }
 }
@@ -87,16 +205,59 @@
   align-items: flex-start;
   justify-content: space-between;
   border-left: 2px solid rgba(var(--black), 0.2);
-  padding-left: 4vh;
-  margin-left: 4vh;
+  padding: 0 20px;
+  @include tab {
+    min-width: 100%;
+    border-left: 0px solid rgba(var(--black), 0.2);
+    width: 100%;
+    padding-left: 0px;
+    margin: 0px;
+    padding: 40px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @include phone {
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
+    width: 100vw !important;
+  }
+  &-wrapper {
+    @include tab {
+      flex: 60%;
+      p {
+        width: 60%;
+        text-align: left !important;
+        @include phone {
+          width: 100%;
+          font-size: 9vw;
+          line-height: 10vw;
+          background-attachment: scroll !important;
+          display: block;
+        }
+      }
+    }
+    @include phone {
+      flex: 100%;
+      height: 100%;
+    }
+  }
   h2,
   h2 span {
     font-size: 14.4vh;
     letter-spacing: 2px;
+    @include phone {
+      font-size: 40vw;
+    }
   }
   h2 {
     line-height: 1;
-    margin-bottom: 4vh;
+    margin-bottom: 40px;
+    @include phone {
+      line-height: 0.8;
+      margin-bottom: 10px;
+    }
   }
   h2 span {
     margin-left: 1.2vh;
@@ -118,6 +279,13 @@
         rgba(var(--background-color), 0.7)
       ),
       url("../img/bckgrnd.jpg");
+    @include tab {
+      padding: 4vw 7vw;
+    }
+    @include phone {
+      padding: 6vw 12vw;
+    }
+
     &:hover {
       filter: contrast(1.2);
     }

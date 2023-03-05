@@ -1,0 +1,48 @@
+{% extends 'main.html' %} {% block content %}
+
+<section class="login">
+  <div class="login-background">
+    <div id="object"></div>
+    <div class="add-container login-container">
+      <div class="add-wrapper login-wrapper">
+        <div class="add-wrapper__heading login-wrapper__heading">
+          <h4 class="add-wrapper__heading--sub login-wrapper__heading--sub">
+            new
+          </h4>
+          <h2 class="add-wrapper__heading--main login-wrapper__heading--main">
+            password
+          </h2>
+        </div>
+        <form method="POST" class="login-form">
+          {% csrf_token %}
+          <div class="login-form--field">
+            <input
+              type="password"
+              name="new_password1"
+              autocomplete="new-password"
+              required=""
+              id="id_new_password1"
+              class="input input--text"
+              placeholder="new password"
+            />
+          </div>
+          <div class="login-form--field">
+            <input
+              type="password"
+              name="new_password2"
+              autocomplete="new-password"
+              required=""
+              id="id_new_password2"
+              class="input input--text"
+              placeholder="re-enter new password"
+            />
+          </div>
+
+          <input class="login-form--btn" type="submit" value="Proceed" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

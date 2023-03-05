@@ -1,50 +1,91 @@
 h1 {
-  font-size: 18.4vw;
-  font-weight: 1000;
+  font-size: 30vw;
+  font-weight: 100;
   line-height: 25vw;
-  font-family: "Meridies", serif;
+  font-family: "Canopee", serif;
   text-transform: uppercase;
   color: rgb(var(--background-color));
-  letter-spacing: -0.1vw;
-  padding: 0 2.4vw;
+  letter-spacing: -1vw;
+  padding: 2vw 20px 0px 20px;
+  // margin: 0 20px;
+  @include phone {
+    padding: 3vw 20px 0px 20px;
+    font-size: 32vw;
+    line-height: 30vw;
+  }
 }
 
 h2 {
-  font-size: 3.2vw;
+  font-size: 4.8vw;
   font-weight: 1000;
-  font-family: "Meridies", serif;
+  font-family: "Canopee", serif;
   text-transform: uppercase;
   color: rgb(var(--black));
   letter-spacing: 0.1vw;
-  span {
-    font-size: 4.8vw;
+
+  @include phone {
+    font-size: 8vw;
+    line-height: 1;
   }
 }
 
 h3 {
   font-size: 4vw;
   font-weight: 100;
-  font-family: "Domine", serif;
+  font-family: "Editorial", serif;
 }
 
 h4 {
   font-family: "Chomsky", serif;
-  font-size: calc(1vw + 8px);
+  font-size: calc(2vw);
   font-weight: 100;
+  @include phone {
+    font-size: calc(4.8vw);
+  }
+}
+
+h5 {
+  font-size: 1.6vw;
+  font-family: "Canopee", serif;
+  font-weight: 1000;
+  text-transform: uppercase;
+  @include tab {
+    font-size: 2vw;
+  }
+  @include phone {
+    font-size: 4.8vw !important;
+  }
 }
 
 p {
-  font-size: 2vw;
-  font-weight: 100;
-  font-family: "Domine", sans-serif;
-  color: rgb(var(--black));
-  &::first-letter {
-    font-size: 4.8vw;
-    background-color: rgb(var(--black));
-    color: rgb(var(--background-color));
-    float: left;
-    margin: 0.6vw 0.8vw 0 0;
-    padding: 0.2vw 0.4vw 0.2vw 0.4vw;
-    text-transform: uppercase;
+  font-size: 2.4vw;
+  line-height: 2.4vw;
+  text-align: left;
+  font-family: "Editorial", serif;
+  text-align: justify;
+
+  @include phone {
+    font-size: 6vw;
+    line-height: 7vw;
+    text-align: left;
+    letter-spacing: -0.1vw;
+  }
+}
+
+p:first-letter {
+  font-family: "Canopee", sans-serif;
+  font-feature-settings: "ss03";
+  float: left;
+  font-size: 7vw;
+  line-height: 5vw;
+  margin: 0.7vw 1vw 0vw 0vw;
+  background-color: rgb(var(--black));
+  color: rgb(var(--background-color));
+  padding: 1vw 0.6vw 0vw 0.6vw;
+  @include phone {
+    font-size: 18vw;
+    line-height: 17vw;
+    margin: 1vw 2vw 0vw 0vw;
+    padding: 1vw 1.4vw 0vw 1.2vw;
   }
 }

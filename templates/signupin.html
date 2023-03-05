@@ -1,0 +1,69 @@
+{% extends 'main.html' %}
+<!--  -->
+{% block title %} {{ page }} {% endblock %} {% block content %}
+
+<section class="signupin">
+  <div class="signupin-container">
+    <div class="signupin__heading">
+      <h4 class="signupin__heading--sub">your account</h4>
+      <h2 class="signupin__heading--main">{{page}}</h2>
+      <p class="signupin__heading--salute">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni qui quia
+        voluptatem blanptatibus omnis nemo sequi commodi id totam adipisci.
+      </p>
+    </div>
+    <!-- Sign Up Form -->
+    <div class="forms">
+      {% if page == 'register' %}
+      <form method="POST" class="form">
+        {% csrf_token %} {% for field in form %}
+        <div class="form--field">
+          <div class="form--field-embed">
+            <label class="form--label">{{field.label}}</label>
+
+            {{field}}
+          </div>
+        </div>
+        {% for error in field.errors %}
+        <span style="color: red" class="field--errors">{{error}}</span>
+        {% endfor %} {% endfor %}
+
+        <span class="btn--wrapper">
+          <button class="action-btn" type="submit">Register</button>
+        </span>
+        <div class="form--switch">
+          Already have an account? <a href="{% url 'login' %}">Sign In</a>
+        </div>
+      </form>
+
+      {% else %}
+      <!-- Sign In Form -->
+      <form method="POST" class="form">
+        {% csrf_token %} {% for field in form %}
+        <div class="form--field">
+          <div class="form--field-embed">
+            <label class="form--label">{{field.label}}</label>
+
+            {{field}}
+          </div>
+        </div>
+        {% for error in field.errors %}
+        <span style="color: red" class="field--errors">{{error}}</span>
+        {% endfor %} {% endfor %}
+        <span class="form--forget">
+          <a href="{% url 'reset_password' %}">Forget Password?</a>
+        </span>
+        <span class="btn--wrapper">
+          <button class="action-btn" type="submit">Login</button>
+        </span>
+        <div class="form--switch">
+          Don't have an account? <a href="{% url 'register' %}">Sign Up</a>
+        </div>
+      </form>
+
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,166 +1,93 @@
-<!-- {% extends 'main.html' %} {% block content %} -->
-<!-- {% endblock content %} -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/styles.css" />
-    <script defer src="../static/js/index.js"></script>
-    <title>Document</title>
-  </head>
-  <nav>
-    <div class="nav__background"></div>
-    <div class="place">new delhi, india</div>
-    <h4 class="nav__head">the paper blog</h4>
-    <div class="burger">
-      <div class="lines">
-        <div class="line1"></div>
-        <div class="line2"></div>
-      </div>
+{% extends 'main.html' %} {% load static %}
+<!--  -->
+{% block title %} Welcome To Blog {% endblock %} {% block content %}
+<div class="heading">
+  <h1>jappreet</h1>
+</div>
+
+<section class="intro">
+  <div class="intro__left">
+    <div class="intro__left-heading">
+      <h2>interactive</h2>
+      <h2 class="bigtxt">artist!</h2>
     </div>
-    <div class="slider">
-      <div class="menu">
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">index</a></h2>
-        </div>
-        <div class="overflow">
-          <h2><a class="menu-item" href="#">blogs</a></h2>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <body>
-    <div class="heading" style="margin-top: 7vw">
-      <h1>jappreet</h1>
+    <div class="intro__left-img">
+      <!-- <img
+        class="intro__left-img-src"
+        src="{% static 'img/default.jpeg' %}"
+        alt="profile image of Jappreet Singh"
+      /> -->
     </div>
 
-    <section class="intro">
-      <div class="intro__left">
-        <div class="intro__left-heading">
-          <h2>welcome to <span>paper blog!</span></h2>
-        </div>
-
-        <div class="intro__left-text">
-          <p>
-            full stack web project, The project was build just to brush up the
-            skills with latest designing & developing techinques in the
-            industry.
-            <br />
-            With the help of this project, an organization will help itself by
-            automating the ordering portion in their stores. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Sequi, voluptas eveniet
-            dolores obcaecati quidem, <br />
-            repudiandae quisquam sed maxime earum vitae nostrum non ad dicta
-            nulla impedit laborum deleniti facere cu deleniti facere cumque.
-          </p>
-        </div>
-      </div>
-
-      <div class="intro__right">
-        <div class="intro__right-img">
-          <img
-            class="profile"
-            src="../static/img/profile.png"
-            alt="profile image of Jappreet Singh"
-          />
-        </div>
-        <div class="intro__right-content">
-          <h2>personal blog application build on python frame .</h2>
-        </div>
-      </div>
-    </section>
-
-    <section class="recent">
-      <div class="header">
-        <div class="heading">
-          <h1>recent</h1>
-        </div>
-        <div class="stamp">
-          <img
-            class="stamp-svg"
-            src="../static/img/Stamp.svg"
-            alt="Stamp of name"
-          />
-        </div>
-      </div>
-
-      <div class="recent-blogs">
-        <div class="blog">
-          <div class="blog-embed">
-            <h2>Blog Title</h2>
-            <div class="blog-embed-text">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-              dolore voluptatibus m! Repudia ndae ipsum dolor sit amet
-              consectetur adipisicing elit. Error, dolore voluptatibus m!
-              Repudia."
-            </div>
-            <div class="blog-embed-date">
-              <h4>Date:</h4>
-              <span>16/04/2002</span>
-            </div>
-          </div>
-        </div>
-        <div class="blog">
-          <div class="blog-embed">
-            <h2>Blog Title</h2>
-            <div class="blog-embed-text">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-              dolore voluptatibus m! Repudia ndae ipsum dolor sit amet
-              consectetur adipisicing elit. Error, dolore voluptatibus m!
-              Repudia."
-            </div>
-            <div class="blog-embed-date">
-              <h4>Date:</h4>
-              <span>16/04/2002</span>
-            </div>
-          </div>
-        </div>
-        <div class="blog">
-          <div class="blog-embed">
-            <h2>Blog Title</h2>
-            <div class="blog-embed-text">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-              dolore voluptatibus m! Repudia ndae ipsum dolor sit amet
-              consectetur adipisicing elit. Error, dolore voluptatibus m!
-              Repudia."
-            </div>
-            <div class="blog-embed-date">
-              <h4>Date:</h4>
-              <span>16/04/2002</span>
-            </div>
-          </div>
-        </div>
-        <div class="blog">
-          <div class="blog-embed">
-            <h2>Blog Title</h2>
-            <div class="blog-embed-text">
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
-              dolore voluptatibus m! Repudia ndae ipsum dolor sit amet
-              consectetur adipisicing elit. Error, dolore voluptatibus m!
-              Repudia."
-            </div>
-            <div class="blog-embed-date">
-              <h4>Date:</h4>
-              <span>16/04/2002</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="mail__list">
-      <ul class="mail__tags">
-        <li class="mail__tag"><div class="mailitem">let's talk</div></li>
-        <li class="mail__tag"><div class="mailicon">mail me</div></li>
-        <li class="mail__tag"><div class="mailitem">let's talk</div></li>
-        <li class="mail__tag"><div class="mailicon">mail me</div></li>
-        <li class="mail__tag"><div class="mailitem">let's talk</div></li>
-        <li class="mail__tag"><div class="mailicon">mail me</div></li>
-        <li class="mail__tag"><div class="mailitem">let's talk</div></li>
-        <li class="mail__tag"><div class="mailicon">mail me</div></li>
-      </ul>
+    <div class="intro__left-text">
+      <p>
+        full stack web project, The project was build just to brush up the
+        skills with latest designing & developing techinques in the industry.
+      </p>
     </div>
-  </body>
-</html>
+  </div>
+
+  <div class="intro__right">
+    <div class="intro__right-img"></div>
+    <div class="intro__right-content">
+      <h2>creative developer</h2>
+      <h2>interactive designer</h2>
+      <h2>undergrad student</h2>
+      <h2>based in new delhi, in.</h2>
+    </div>
+  </div>
+</section>
+
+<section class="recent">
+  <div class="header">
+    <div class="heading heading--recent">
+      <h1>recent</h1>
+    </div>
+    <div class="stamp">
+      <img
+        class="stamp-svg"
+        src="{% static 'img/Stamp.svg' %}"
+        alt="Stamp of name"
+      />
+    </div>
+  </div>
+
+  <div class="recent-blogs">
+    {% for blogs in object_list %}
+    <div class="blog">
+      <div class="blog-embed">
+        <h2>{{ blogs.title }}</h2>
+        <div class="blog-embed-text">{{blogs.body|slice:150}}</div>
+        <div class="blog-embed-date">
+          <h4>Date:</h4>
+          <span>{{ blogs.date_of_create }}</span>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+<div class="mail__list">
+  <ul class="mail__tags">
+    <li class="mail__tag"><div class="mailitem">let's talk</div></li>
+    <li class="mail__tag">
+      <a href="mailto:jappreet16042002@gmail.com" class="mailicon">mail me</a>
+    </li>
+    <li class="mail__tag"><div class="mailitem">let's talk</div></li>
+    <li class="mail__tag">
+      <a href="mailto:jappreet16042002@gmail.com" class="mailicon">mail me</a>
+    </li>
+    <li class="mail__tag"><div class="mailitem">let's talk</div></li>
+    <li class="mail__tag">
+      <a href="mailto:jappreet16042002@gmail.com" class="mailicon">mail me</a>
+    </li>
+    <li class="mail__tag"><div class="mailitem">let's talk</div></li>
+    <li class="mail__tag">
+      <a href="mailto:jappreet16042002@gmail.com" class="mailicon">mail me</a>
+    </li>
+  </ul>
+</div>
+
+{% endblock content %}

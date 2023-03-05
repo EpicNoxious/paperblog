@@ -1,7 +1,5 @@
 nav {
-  // height: 5vw;
   width: 100%;
-
   padding: calc(2vh + 8px) calc(2vw + 8px);
   position: fixed;
   top: 0;
@@ -9,6 +7,7 @@ nav {
   right: 0;
   bottom: auto;
   z-index: 10;
+  height: 10vh;
 
   display: flex;
   align-items: center;
@@ -16,7 +15,42 @@ nav {
   text-transform: capitalize;
 
   border-bottom: 2px solid rgba(var(--black), 0.2);
+  // @media only screen and (min-device-width: 991px) {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   right: auto;
+  //   bottom: auto;
+  //   writing-mode: vertical-rl;
+  //   height: 100%;
+  //   width: 10vh;
+  //   background-image: linear-gradient(
+  //       rgba(var(--background-color), 0.7),
+  //       rgba(var(--background-color), 0.7)
+  //     ),
+  //     url("../img/bckgrnd.jpg");
+  //   border-right: 2px solid rgba(var(--black), 0.2);
+  //   & .nav__head {
+  //     order: 2;
+  //     align-items: center;
+  //   }
+  //   & .burger {
+  //     order: 1;
+  //     justify-content: center;
+  //     .lines {
+  //       flex-direction: row;
+  //     }
+  //   }
+  //   & .place {
+  //     order: 3;
+  //     align-items: center;
+  //   }
+  // }
 
+  @include phone {
+    padding: calc(1vh + 8px) calc(1vw + 8px);
+    height: 8vh;
+  }
   .nav__background {
     // width: 100%;
     position: absolute;
@@ -41,6 +75,9 @@ nav {
     justify-content: flex-start;
     transition: all 500ms ease-in-out 500ms;
     z-index: 13;
+    @include phone {
+      display: none;
+    }
     &-focus {
       transition: all 500ms ease-in-out 0ms;
       color: rgb(var(--background-color));
@@ -52,6 +89,9 @@ nav {
     justify-content: center;
     z-index: 13;
     transition: all 500ms ease-in-out 500ms;
+    color: rgb(var(--black));
+    text-decoration: none;
+    cursor: url("../img/c2.svg"), auto;
     &-focus {
       transition: all 500ms ease-in-out 0ms;
       color: rgb(var(--background-color));
@@ -64,6 +104,9 @@ nav {
     justify-content: flex-end;
     z-index: 13;
     // burger lines
+    @include phone {
+      width: auto;
+    }
     .lines {
       display: flex;
 
@@ -78,6 +121,10 @@ nav {
       border-radius: 100px;
       background: rgb(var(--black));
       transition: all 500ms ease-in-out 500ms;
+      @include phone {
+        width: 30px;
+        height: 2px;
+      }
     }
     .line1-focus {
       transition: all 500ms ease-in-out 0ms;
@@ -106,12 +153,13 @@ nav {
   left: 0;
   bottom: 0;
   z-index: 12;
-  transform: translateY(-100vh);
+  transform: translate(0, -100vh);
   transition: all 500ms ease-in-out 500ms;
+  visibility: hidden;
 }
 .slider-focus {
   transition: all 500ms ease-in-out 0ms;
-  transform: translateY(0vh);
+  transform: translate(0vh, 0);
   visibility: visible;
 }
 
@@ -123,21 +171,39 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   .overflow {
     overflow: hidden;
   }
   &-item {
     display: inline-block;
     font-size: 5.6vw;
-    font-weight: 100;
-    text-decoration: none;
-    color: rgb(var(--background-color));
     transition: transform 500ms ease-in-out 0ms;
-    transform: translateY(15vh);
+    transform: translateY(15vw);
+    text-decoration: none;
     cursor: url("../img/c2.svg"), auto;
-    &:hover {
+    h2 {
+      font-size: 9.6vw;
+      font-weight: 1000;
+      line-height: 0.95;
+      line-height: 0.95;
+      letter-spacing: 0.5vw;
+      color: rgb(var(--background-color));
       text-decoration: underline;
+      text-decoration-color: rgb(var(--black));
+      @include phone {
+        font-size: 16vw;
+        line-height: 1;
+        letter-spacing: 0.8vw;
+      }
+      &:hover {
+        text-decoration-color: rgb(var(--orange));
+      }
     }
+    @include phone {
+      font-size: 9.6vw;
+    }
+
     &-focus {
       transition: transform 500ms ease-in-out 500ms;
       transform: translateY(0vh);
@@ -154,7 +220,7 @@ nav {
   bottom: auto;
   writing-mode: vertical-rl;
   height: 100%;
-  width: 5vw;
+  width: 10vh;
   background-image: linear-gradient(
       rgba(var(--background-color), 0.7),
       rgba(var(--background-color), 0.7)
@@ -177,18 +243,15 @@ nav {
     align-items: center;
   }
 }
+// @media only screen and (min-device-width: 991px) {
+// }
+// .slider-blogs {
+//   background-image: url("../img/Tornpage_Slant.png");
+//   transform: translateX(-100vw);
+//   background-position: right center !important;
 
-.slider-blogs {
-  background-image: url("../img/Tornpage_Slant.svg");
-  transform: translateX(-100vw);
-  .menu {
-    height: 100%;
-    writing-mode: horizontal-tb;
-  }
-}
-
-.slider-blogs-focus {
-  transition: all 500ms ease-in-out 0ms;
-  transform: translateX(-0.1vw);
-  visibility: visible;
-}
+//   .menu {
+//     height: 100%;
+//     writing-mode: horizontal-tb;
+//   }
+// }

@@ -1,18 +1,98 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main</title>
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-</head>
-<body>
-<!--navigation-->
-{% include 'navbar.html' %}
-<!--content of a web page-->
-{%block content %} {% endblock content %}
-<!--footer-->
-{% include 'footer.html' %}
-<script src="{% static 'js/index.js' %}"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Paper Blog &mdash;{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script defer src="{% static 'js/index.js' %}"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.svg' %}"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body class="animation">
+    <div class="no-display">
+      <h3>
+        Please rotate your device <br />
+        to ensure a better experience :)
+      </h3>
+    </div>
+    <!--navigation-->
+    {% include 'navbar.html' %}
+    <!--content of a web page-->
+    {%block content %} {% endblock content %}
+    <!--footer-->
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert--{{ message.tags }}">
+      <span class="alert_message">{{ message }}</span>
+      <button class="alert__close">X</button>
+    </div>
+    {% endfor %} {% endif %} {% include 'footer.html' %}
+    <script>
+      let alertWrapper = document.querySelector(".alert");
+      let alertClose = document.querySelector(".alert__close");
+
+      if (alertWrapper) {
+        alertClose.addEventListener(
+          "click",
+          () => (alertWrapper.style.display = "none")
+        );
+      }
+    </script>
+    <script>
+      const headings = document.querySelectorAll("h1, h2, h5, button");
+
+      // console.log(document.querySelector('input[type="submit"]').value);
+      for (const heading of headings) {
+        heading.innerHTML = heading.innerHTML.replace(
+          /[c|C]+/g,
+          "<span id='a'>c</span>"
+        );
+        heading.innerHTML = heading.innerHTML.replace(
+          /[o|O]+/g,
+          "<span id='a'>o</span>"
+        );
+        heading.innerHTML = heading.innerHTML.replace(
+          /[g|G]+/g,
+          "<span id='a'>g</span>"
+        );
+        heading.innerHTML = heading.innerHTML.replace(
+          /[q|Q]+/g,
+          "<span id='a'>q</span>"
+        );
+      }
+    </script>
+    <script>
+      if (typeof vh === "undefined") {
+        //100vh Fix on Mobile
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+        window.addEventListener("resize", () => {
+          vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty("--vh", `${vh}px`);
+        });
+      }
+    </script>
+    <script>
+      const body = document.querySelector("body");
+      var result = localStorage.getItem("hasRan");
+      console.log(body);
+
+      if (!result) {
+        // Set now
+        console.log("never run");
+        localStorage.setItem("hasRan", true);
+      } else {
+        console.log("run");
+        body.classList.remove("animation");
+        body.classList.add("post-animation");
+      }
+    </script>
+  </body>
 </html>
