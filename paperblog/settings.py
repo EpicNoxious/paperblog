@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-uz+aibq#^q4bd_hk3%g(!lnow@we(u^qpc*guafl2&9bbihwxk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,7 +88,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-DATABASES['default'] = dj_database_url.config()
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASES['default'] = dj_database_url.config(default='postgresql://postgres:Q3VJA6WfkkhvZUw8Wpnv@containers-us-west-18.railway.app:6395/railway')
 
 
 # Password validation
