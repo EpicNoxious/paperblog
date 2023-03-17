@@ -6,6 +6,7 @@ import uuid
 
 # Create your models here.
 class Post(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=50)
     image = models.ImageField(null=True, blank=True, upload_to='images/', default="images/default.jpeg")
     date_of_create = models.DateField(auto_now_add=True)

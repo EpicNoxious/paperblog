@@ -11,7 +11,7 @@ const menuitems = document.querySelectorAll(".menu-item");
 //
 // blog.html page
 //
-if (window.location.href.match(new RegExp("blogs/[0-9]*/$"))) {
+if (window.location.href.match(new RegExp("blogs/[0-9a-z-]*/$"))) {
   nav.style.cssText = "display: none;";
   document.documentElement.style.cssText = "padding: 0";
 }
@@ -37,13 +37,13 @@ else if (window.location.href.match(new RegExp("add/$"))) {
 //
 // update.html
 //
-else if (window.location.href.match(new RegExp("update/[0-9]*$"))) {
+else if (window.location.href.match(new RegExp("update/[0-9a-z-]*/$"))) {
   nav.style.cssText = "display: none;";
 }
 //
 // delete.html
 //
-else if (window.location.href.match(new RegExp("delete/[0-9]*$"))) {
+else if (window.location.href.match(new RegExp("delete/[0-9a-z-]*/$"))) {
   nav.style.cssText = "display: none;";
 }
 //

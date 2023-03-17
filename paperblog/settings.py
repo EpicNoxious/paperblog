@@ -89,7 +89,9 @@ DATABASES = {
     }
 }
 
-
+# DATABASES = {
+#     'default': dj_database_url.parse('postgresql://postgres:XvtHqzSEmpAQcd70QNHe@containers-us-west-52.railway.app:6325/railway')
+# }
 
 
 # Password validation

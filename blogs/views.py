@@ -67,7 +67,6 @@ class AddBlogView(UserPassesTestMixin, CreateView):
             form = PostForm(self.request.POST)
             if form.is_valid():
                 messages.success(self.request, 'Blog post added!')
-                return super().form_valid(form)
             return self.request.user.is_superuser
     def handle_no_permission(self):
         messages.error(self.request, "Only admin is allowed to add a blog!")
@@ -82,7 +81,6 @@ class UpdateBlogView(UserPassesTestMixin, UpdateView):
             form = EditForm(self.request.POST)
             if form.is_valid():
                 messages.success(self.request, 'Blog post updated!')
-                return super().form_valid(form)
             return self.request.user.is_superuser
     def handle_no_permission(self):
         messages.error(self.request, "Only admin is allowed to update a blog!")
