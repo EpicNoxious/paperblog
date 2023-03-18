@@ -82,16 +82,24 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'cJYnQ5f3HizgIY5g313C',
+        'HOST': 'containers-us-west-47.railway.app',
+        'PORT': '5524',
     }
 }
 
-# DATABASES = {
-#     'default': dj_database_url.parse('postgresql://postgres:XvtHqzSEmpAQcd70QNHe@containers-us-west-52.railway.app:6325/railway')
-# }
 
 
 # Password validation
