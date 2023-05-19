@@ -89,17 +89,27 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'A1qWF9ZFVNi3E4qhbraz',
+#         'HOST': 'containers-us-west-47.railway.app',
+#         'PORT': '5524',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'A1qWF9ZFVNi3E4qhbraz',
-        'HOST': 'containers-us-west-47.railway.app',
-        'PORT': '5524',
+        'NAME': 'kyxwxnha', 
+        'USER': 'kyxwxnha',
+        'PASSWORD': '332SYFqIE4xmbsj1sHxQD_usL8qdtU-j',
+        'HOST': 'tiny.db.elephantsql.com', 
+        'PORT': '5432',
     }
 }
-
 
 
 # Password validation
@@ -136,9 +146,12 @@ USE_TZ = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'jappreet.016@gmail.com'
-EMAIL_HOST_PASSWORD = 'geymlajpkvjnnhuk'
+EMAIL_HOST_PASSWORD = 'eumsnqqwyjjceber'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

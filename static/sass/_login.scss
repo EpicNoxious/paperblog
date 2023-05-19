@@ -1,4 +1,5 @@
-.signupin {
+.signupin,
+.login {
   height: 97vh;
   height: calc(var(--vh, 1vh) * 97);
   @include phone {
@@ -14,6 +15,7 @@
     @include phone {
       flex-direction: column;
       gap: 40px;
+      min-height: 100vh;
     }
   }
   &__heading {
@@ -29,13 +31,14 @@
       font-weight: 1000;
       font-size: 2.4vw;
       @include phone {
-        font-size: 9.6vw;
+        font-size: 8.4vw;
+        margin-top: 6vw;
       }
     }
     &--main {
       font-size: 11.2vw;
       @include phone {
-        font-size: 40vw;
+        font-size: 24vw;
         margin-bottom: 10px;
       }
     }

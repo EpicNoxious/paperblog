@@ -1,46 +1,57 @@
-{% extends 'main.html' %} {% block content %}
+{% extends 'main.html' %}{% load static %}
+<!--  -->
+{% block title %} Changed Password Successfully {% endblock %}
+<!--  -->
+{% block content %}
 
-<section class="login">
-  <div class="login-background">
-    <div id="object"></div>
-    <div class="add-container login-container">
-      <div class="add-wrapper login-wrapper">
-        <div class="add-wrapper__heading login-wrapper__heading">
-          <h4 class="add-wrapper__heading--sub login-wrapper__heading--sub">
-            new
-          </h4>
-          <h2 class="add-wrapper__heading--main login-wrapper__heading--main">
-            password
-          </h2>
-        </div>
-        <form method="POST" class="login-form">
-          {% csrf_token %}
-          <div class="login-form--field">
+<section class="signupin">
+  <div class="signupin-container">
+    <div class="signupin__heading">
+      <h4 class="signupin__heading--sub">enter new</h4>
+      <h2 class="signupin__heading--main">password</h2>
+      <p class="signupin__heading--salute">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni qui quia
+        voluptatem blanptatibus omnis nemo sequi commodi id totam adipisci.
+      </p>
+    </div>
+    <!-- Sign Up Form -->
+    <div class="forms">
+      <form method="POST" class="form">
+        {% csrf_token %}
+        <div class="form--field">
+          <div class="form--field-embed">
+            <label class="form--label">New password</label>
+
             <input
+              class="form--field-input"
               type="password"
               name="new_password1"
               autocomplete="new-password"
-              required=""
+              required
               id="id_new_password1"
-              class="input input--text"
-              placeholder="new password"
             />
           </div>
-          <div class="login-form--field">
+        </div>
+
+        <div class="form--field">
+          <div class="form--field-embed">
+            <label class="form--label">New password confirmation</label>
+
             <input
+              class="form--field-input"
               type="password"
               name="new_password2"
               autocomplete="new-password"
-              required=""
+              required
               id="id_new_password2"
-              class="input input--text"
-              placeholder="re-enter new password"
             />
           </div>
+        </div>
 
-          <input class="login-form--btn" type="submit" value="Proceed" />
-        </form>
-      </div>
+        <span class="btn--wrapper">
+          <button class="action-btn" type="submit">Continue</button>
+        </span>
+      </form>
     </div>
   </div>
 </section>

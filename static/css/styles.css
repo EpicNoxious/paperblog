@@ -67,7 +67,6 @@
 
 html,
 body {
-  scroll-behavior: smooth;
   position: relative;
   color: var(--black);
   background-image: linear-gradient(rgba(var(--background-color), 0.7), rgba(var(--background-color), 0.7)), url("../img/bckgrnd.jpg");
@@ -1649,60 +1648,73 @@ p:first-letter {
     translate: 0%;
   }
 }
-.signupin {
+.signupin,
+.login {
   height: 97vh;
   height: calc(var(--vh, 1vh) * 97);
   padding: 20px;
 }
 @media screen and (max-width: 479px) {
-  .signupin {
+  .signupin,
+  .login {
     height: auto;
   }
 }
-.signupin-container {
+.signupin-container,
+.login-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 @media screen and (max-width: 479px) {
-  .signupin-container {
+  .signupin-container,
+  .login-container {
     flex-direction: column;
     gap: 40px;
+    min-height: 100vh;
   }
 }
-.signupin__heading {
+.signupin__heading,
+.login__heading {
   text-align: center;
   line-height: 1;
   text-align: left;
   width: 50%;
 }
 @media screen and (max-width: 479px) {
-  .signupin__heading {
+  .signupin__heading,
+  .login__heading {
     width: 100%;
   }
 }
-.signupin__heading--sub {
+.signupin__heading--sub,
+.login__heading--sub {
   text-transform: capitalize;
   font-weight: 1000;
   font-size: 2.4vw;
 }
 @media screen and (max-width: 479px) {
-  .signupin__heading--sub {
-    font-size: 9.6vw;
+  .signupin__heading--sub,
+  .login__heading--sub {
+    font-size: 8.4vw;
+    margin-top: 6vw;
   }
 }
-.signupin__heading--main {
+.signupin__heading--main,
+.login__heading--main {
   font-size: 11.2vw;
 }
 @media screen and (max-width: 479px) {
-  .signupin__heading--main {
-    font-size: 40vw;
+  .signupin__heading--main,
+  .login__heading--main {
+    font-size: 24vw;
     margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 479px) {
-  .signupin__heading--salute {
+  .signupin__heading--salute,
+  .login__heading--salute {
     font-size: 9vw;
     text-align: justify;
   }

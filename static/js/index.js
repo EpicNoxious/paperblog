@@ -7,7 +7,17 @@ const lines = document.querySelector(".lines");
 const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
 const menuitems = document.querySelectorAll(".menu-item");
+const lenis = new Lenis({
+  duration: 1.3,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
 
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 //
 // blog.html page
 //
