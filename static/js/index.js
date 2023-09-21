@@ -7,18 +7,12 @@ const lines = document.querySelector(".lines");
 const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
 const menuitems = document.querySelectorAll(".menu-item");
-const lenis = new Lenis();
-
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
+// const lenis = new Lenis();
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+// requestAnimationFrame(raf);
 //
 // blog.html page
 //
